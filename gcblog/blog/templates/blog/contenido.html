@@ -1,0 +1,28 @@
+<h1>Contenido del Articulo</h1> <a href="/"><h2>Inicio</h2></a>
+
+
+    <h1>{{contenido.titulo}}</h1>
+    <img src="{{contenido.imagen.url}}">
+    <h2>{{contenido.contenido}}</h2>
+    <h3>{{contenido.autor.first_name}} {{contenido.autor.last_name}}</h3>
+
+
+    
+
+
+    <form method="POST" action="/comentar/{{contenido.id}}">
+        {% csrf_token %}
+        <p>Escribe tu nombre: <input name="name"></p><br>
+        <textarea name="comentario" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="Publicar">
+    </form>
+
+    <section>
+        <h3>Comentarios Hechos:</h3>
+        {% for i in comentarios %}
+            <p>{{i.autor}}: {{i.texto}}</p>
+            
+        {% endfor %}
+    
+    </section>

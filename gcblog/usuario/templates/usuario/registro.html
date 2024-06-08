@@ -1,0 +1,16 @@
+<h4>Registro de Usuario</h4>
+
+<form method="POST" action="/usuario/saveUsuario/">
+    {% csrf_token %}
+
+    {{frm}}
+
+<!--<label for="clave">Clave</label>
+    <input type="password" id="password" name="clave">-->
+
+    <button type="submit">Registrate/Register</button>
+    
+</form>
+
+
+<a href="/"><h2>Volver a Inicio</h2></a>

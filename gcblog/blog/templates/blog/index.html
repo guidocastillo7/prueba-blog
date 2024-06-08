@@ -1,0 +1,9 @@
+<h1>Home</h1>
+
+{% for i in contenido %}
+    <a href="/contenido/{{i.id}}"><h1>{{i.titulo}}</h1></a>
+    
+    <img src="{{i.imagen.url}}" width="180" height="100">
+{% endfor %}
+
+<a href="/usuario/registro"><h3>Registro de Usuario</h3></a>
